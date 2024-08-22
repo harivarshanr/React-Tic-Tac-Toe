@@ -1,38 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1a1a1a; /* Dark background resembling an old monitor */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Press Start 2P', cursive;
+}
+
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column; /* Allow for vertical alignment of the board and message */
+  justify-content: center;
+  align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.board {
+  width: 400px;
+  height: 400px;
+  background-color: #000000; /* Black background for the board */
+  border: 2px solid #333333; /* Thin dark grey border */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  box-shadow: 0 0 15px #39ff14; /* Neon green glow around the board */
 }
 
-.App-link {
-  color: #61dafb;
+.row {
+  flex: 1;
+  display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.square {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  border: 2px solid #39ff14; /* Thicker dark grey border for a more pronounced look */
+  background-color: #000000; /* Black background for the squares */
+  color: #39ff14; /* Neon green color for the values */
+  font-size: 60px;
+  font-family: 'Press Start 2P', cursive;
+  text-shadow: 0 0 5px #39ff14; /* Neon green glow effect for the text */
+  transition: background-color 0.1s ease;
+}
+
+.square:active {
+  background-color: #333333; /* Dark grey to simulate a press effect */
+}
+
+.retro-message {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #000000; /* Black background */
+  color: #39ff14; /* Neon green text */
+  border: 2px solid #39ff14; /* Neon green border */
+  box-shadow: 0 0 10px #39ff14; /* Neon green glow around the message */
+  font-size: 20px;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
 }
